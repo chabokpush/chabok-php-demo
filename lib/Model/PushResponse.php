@@ -1,6 +1,6 @@
 <?php
 /**
- * ObjectID
+ * PushResponse
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * ObjectID Class Doc Comment
+ * PushResponse Class Doc Comment
  *
  * @category    Class
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ObjectID implements ArrayAccess
+class PushResponse implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,15 @@ class ObjectID implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ObjectID';
+    protected static $swaggerModelName = 'PushResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        
+        'id' => 'string',
+        'count' => 'double'
     ];
 
     /**
@@ -62,7 +63,8 @@ class ObjectID implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        
+        'id' => null,
+        'count' => 'double'
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class ObjectID implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        
+        'id' => 'id',
+        'count' => 'count'
     ];
 
 
@@ -89,7 +92,8 @@ class ObjectID implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        
+        'id' => 'setId',
+        'count' => 'setCount'
     ];
 
 
@@ -98,7 +102,8 @@ class ObjectID implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        
+        'id' => 'getId',
+        'count' => 'getCount'
     ];
 
     public static function attributeMap()
@@ -132,6 +137,8 @@ class ObjectID implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
     }
 
     /**
@@ -143,6 +150,12 @@ class ObjectID implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['id'] === null) {
+            $invalid_properties[] = "'id' can't be null";
+        }
+        if ($this->container['count'] === null) {
+            $invalid_properties[] = "'count' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -155,9 +168,57 @@ class ObjectID implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['id'] === null) {
+            return false;
+        }
+        if ($this->container['count'] === null) {
+            return false;
+        }
         return true;
     }
 
+
+    /**
+     * Gets id
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param string $id Generated push id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets count
+     * @return double
+     */
+    public function getCount()
+    {
+        return $this->container['count'];
+    }
+
+    /**
+     * Sets count
+     * @param double $count Count of to be pushed devices
+     * @return $this
+     */
+    public function setCount($count)
+    {
+        $this->container['count'] = $count;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset

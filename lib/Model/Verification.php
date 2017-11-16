@@ -1,6 +1,6 @@
 <?php
 /**
- * ObjectID
+ * Verification
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * ObjectID Class Doc Comment
+ * Verification Class Doc Comment
  *
  * @category    Class
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ObjectID implements ArrayAccess
+class Verification implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,17 @@ class ObjectID implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ObjectID';
+    protected static $swaggerModelName = 'Verification';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        
+        'user_id' => 'string',
+        'code' => 'string',
+        'verified' => 'bool',
+        'id' => '\Swagger\Client\Model\ObjectID'
     ];
 
     /**
@@ -62,7 +65,10 @@ class ObjectID implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        
+        'user_id' => null,
+        'code' => null,
+        'verified' => null,
+        'id' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +86,10 @@ class ObjectID implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        
+        'user_id' => 'userId',
+        'code' => 'code',
+        'verified' => 'verified',
+        'id' => 'id'
     ];
 
 
@@ -89,7 +98,10 @@ class ObjectID implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        
+        'user_id' => 'setUserId',
+        'code' => 'setCode',
+        'verified' => 'setVerified',
+        'id' => 'setId'
     ];
 
 
@@ -98,7 +110,10 @@ class ObjectID implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        
+        'user_id' => 'getUserId',
+        'code' => 'getCode',
+        'verified' => 'getVerified',
+        'id' => 'getId'
     ];
 
     public static function attributeMap()
@@ -132,6 +147,10 @@ class ObjectID implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['user_id'] = isset($data['user_id']) ? $data['user_id'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['verified'] = isset($data['verified']) ? $data['verified'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -143,6 +162,9 @@ class ObjectID implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['user_id'] === null) {
+            $invalid_properties[] = "'user_id' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -155,9 +177,96 @@ class ObjectID implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['user_id'] === null) {
+            return false;
+        }
         return true;
     }
 
+
+    /**
+     * Gets user_id
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->container['user_id'];
+    }
+
+    /**
+     * Sets user_id
+     * @param string $user_id
+     * @return $this
+     */
+    public function setUserId($user_id)
+    {
+        $this->container['user_id'] = $user_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets code
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->container['code'];
+    }
+
+    /**
+     * Sets code
+     * @param string $code
+     * @return $this
+     */
+    public function setCode($code)
+    {
+        $this->container['code'] = $code;
+
+        return $this;
+    }
+
+    /**
+     * Gets verified
+     * @return bool
+     */
+    public function getVerified()
+    {
+        return $this->container['verified'];
+    }
+
+    /**
+     * Sets verified
+     * @param bool $verified
+     * @return $this
+     */
+    public function setVerified($verified)
+    {
+        $this->container['verified'] = $verified;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     * @return \Swagger\Client\Model\ObjectID
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param \Swagger\Client\Model\ObjectID $id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset

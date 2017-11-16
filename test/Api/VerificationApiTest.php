@@ -1,6 +1,6 @@
 <?php
 /**
- * PushApiTest
+ * VerificationApiTest
  * PHP version 5
  *
  * @category Class
@@ -34,14 +34,14 @@ use \Swagger\Client\ApiException;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * PushApiTest Class Doc Comment
+ * VerificationApiTest Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PushApiTest extends \PHPUnit_Framework_TestCase
+class VerificationApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -73,22 +73,22 @@ class PushApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for pushByQuery
+     * Test case for verificationRequestCodeGet
      *
-     * Push a text message to a segment of devices.
+     * Request a verification code to be sent to a user.
      *
      */
-    public function testPushByQuery()
+    public function testVerificationRequestCodeGet()
     {
     }
 
     /**
-     * Test case for pushToUsers
+     * Test case for verificationVerifyGetVerificationVerifyCodeuserIdcode
      *
-     * Push multiple text messages to users.
+     * Verify user's verification code.
      *
      */
-    public function testPushToUsers()
+    public function testVerificationVerifyGetVerificationVerifyCodeuserIdcode()
     {
     }
 }

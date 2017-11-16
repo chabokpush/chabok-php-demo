@@ -1,6 +1,6 @@
 <?php
 /**
- * MessageTest
+ * SegmentPushTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * MessageTest Class Doc Comment
+ * SegmentPushTest Class Doc Comment
  *
  * @category    Class */
-// * @description Message
+// * @description SegmentPush
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class MessageTest extends \PHPUnit_Framework_TestCase
+class SegmentPushTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,23 +71,23 @@ class MessageTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Message"
+     * Test "SegmentPush"
      */
-    public function testMessage()
+    public function testSegmentPush()
     {
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "target"
      */
-    public function testPropertyId()
+    public function testPropertyTarget()
     {
     }
 
     /**
-     * Test attribute "created_at"
+     * Test attribute "channel"
      */
-    public function testPropertyCreatedAt()
+    public function testPropertyChannel()
     {
     }
 
@@ -99,72 +99,9 @@ class MessageTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "content_type"
-     */
-    public function testPropertyContentType()
-    {
-    }
-
-    /**
      * Test attribute "data"
      */
     public function testPropertyData()
-    {
-    }
-
-    /**
-     * Test attribute "delivered"
-     */
-    public function testPropertyDelivered()
-    {
-    }
-
-    /**
-     * Test attribute "seen"
-     */
-    public function testPropertySeen()
-    {
-    }
-
-    /**
-     * Test attribute "dismiss"
-     */
-    public function testPropertyDismiss()
-    {
-    }
-
-    /**
-     * Test attribute "stateful"
-     */
-    public function testPropertyStateful()
-    {
-    }
-
-    /**
-     * Test attribute "live"
-     */
-    public function testPropertyLive()
-    {
-    }
-
-    /**
-     * Test attribute "in_app"
-     */
-    public function testPropertyInApp()
-    {
-    }
-
-    /**
-     * Test attribute "publish_id"
-     */
-    public function testPropertyPublishId()
-    {
-    }
-
-    /**
-     * Test attribute "c_id"
-     */
-    public function testPropertyCId()
     {
     }
 
@@ -176,9 +113,44 @@ class MessageTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "cip"
+     * Test attribute "in_app"
      */
-    public function testPropertyCip()
+    public function testPropertyInApp()
+    {
+    }
+
+    /**
+     * Test attribute "live"
+     */
+    public function testPropertyLive()
+    {
+    }
+
+    /**
+     * Test attribute "use_as_alert"
+     */
+    public function testPropertyUseAsAlert()
+    {
+    }
+
+    /**
+     * Test attribute "alert_text"
+     */
+    public function testPropertyAlertText()
+    {
+    }
+
+    /**
+     * Test attribute "ttl"
+     */
+    public function testPropertyTtl()
+    {
+    }
+
+    /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
     {
     }
 }

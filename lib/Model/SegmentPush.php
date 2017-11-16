@@ -1,6 +1,6 @@
 <?php
 /**
- * Message
+ * SegmentPush
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * Message Class Doc Comment
+ * SegmentPush Class Doc Comment
  *
  * @category    Class
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Message implements ArrayAccess
+class SegmentPush implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,28 +47,24 @@ class Message implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'message';
+    protected static $swaggerModelName = 'SegmentPush';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
-        'created_at' => 'double',
+        'target' => 'object',
+        'channel' => 'string',
         'content' => 'string',
-        'content_type' => 'string',
         'data' => 'object',
-        'delivered' => '\Swagger\Client\Model\XAny[]',
-        'seen' => '\Swagger\Client\Model\XAny[]',
-        'dismiss' => '\Swagger\Client\Model\XAny[]',
-        'stateful' => 'bool',
-        'live' => 'bool',
-        'in_app' => 'bool',
-        'publish_id' => 'string',
-        'c_id' => 'string',
         'track_id' => 'string',
-        'cip' => 'string'
+        'in_app' => 'bool',
+        'live' => 'bool',
+        'use_as_alert' => 'bool',
+        'alert_text' => 'string',
+        'ttl' => 'double',
+        'id' => 'double'
     ];
 
     /**
@@ -76,21 +72,17 @@ class Message implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-        'created_at' => 'double',
+        'target' => null,
+        'channel' => null,
         'content' => null,
-        'content_type' => null,
         'data' => null,
-        'delivered' => null,
-        'seen' => null,
-        'dismiss' => null,
-        'stateful' => null,
-        'live' => null,
-        'in_app' => null,
-        'publish_id' => null,
-        'c_id' => null,
         'track_id' => null,
-        'cip' => null
+        'in_app' => null,
+        'live' => null,
+        'use_as_alert' => null,
+        'alert_text' => null,
+        'ttl' => 'double',
+        'id' => 'double'
     ];
 
     public static function swaggerTypes()
@@ -108,21 +100,17 @@ class Message implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'created_at' => 'createdAt',
+        'target' => 'target',
+        'channel' => 'channel',
         'content' => 'content',
-        'content_type' => 'contentType',
         'data' => 'data',
-        'delivered' => 'delivered',
-        'seen' => 'seen',
-        'dismiss' => 'dismiss',
-        'stateful' => 'stateful',
-        'live' => 'live',
-        'in_app' => 'inApp',
-        'publish_id' => 'publishId',
-        'c_id' => 'cId',
         'track_id' => 'trackId',
-        'cip' => 'cip'
+        'in_app' => 'inApp',
+        'live' => 'live',
+        'use_as_alert' => 'useAsAlert',
+        'alert_text' => 'alertText',
+        'ttl' => 'ttl',
+        'id' => 'id'
     ];
 
 
@@ -131,21 +119,17 @@ class Message implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'created_at' => 'setCreatedAt',
+        'target' => 'setTarget',
+        'channel' => 'setChannel',
         'content' => 'setContent',
-        'content_type' => 'setContentType',
         'data' => 'setData',
-        'delivered' => 'setDelivered',
-        'seen' => 'setSeen',
-        'dismiss' => 'setDismiss',
-        'stateful' => 'setStateful',
-        'live' => 'setLive',
-        'in_app' => 'setInApp',
-        'publish_id' => 'setPublishId',
-        'c_id' => 'setCId',
         'track_id' => 'setTrackId',
-        'cip' => 'setCip'
+        'in_app' => 'setInApp',
+        'live' => 'setLive',
+        'use_as_alert' => 'setUseAsAlert',
+        'alert_text' => 'setAlertText',
+        'ttl' => 'setTtl',
+        'id' => 'setId'
     ];
 
 
@@ -154,21 +138,17 @@ class Message implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'created_at' => 'getCreatedAt',
+        'target' => 'getTarget',
+        'channel' => 'getChannel',
         'content' => 'getContent',
-        'content_type' => 'getContentType',
         'data' => 'getData',
-        'delivered' => 'getDelivered',
-        'seen' => 'getSeen',
-        'dismiss' => 'getDismiss',
-        'stateful' => 'getStateful',
-        'live' => 'getLive',
-        'in_app' => 'getInApp',
-        'publish_id' => 'getPublishId',
-        'c_id' => 'getCId',
         'track_id' => 'getTrackId',
-        'cip' => 'getCip'
+        'in_app' => 'getInApp',
+        'live' => 'getLive',
+        'use_as_alert' => 'getUseAsAlert',
+        'alert_text' => 'getAlertText',
+        'ttl' => 'getTtl',
+        'id' => 'getId'
     ];
 
     public static function attributeMap()
@@ -202,21 +182,17 @@ class Message implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
+        $this->container['target'] = isset($data['target']) ? $data['target'] : null;
+        $this->container['channel'] = isset($data['channel']) ? $data['channel'] : 'default';
         $this->container['content'] = isset($data['content']) ? $data['content'] : null;
-        $this->container['content_type'] = isset($data['content_type']) ? $data['content_type'] : null;
         $this->container['data'] = isset($data['data']) ? $data['data'] : null;
-        $this->container['delivered'] = isset($data['delivered']) ? $data['delivered'] : null;
-        $this->container['seen'] = isset($data['seen']) ? $data['seen'] : null;
-        $this->container['dismiss'] = isset($data['dismiss']) ? $data['dismiss'] : null;
-        $this->container['stateful'] = isset($data['stateful']) ? $data['stateful'] : null;
-        $this->container['live'] = isset($data['live']) ? $data['live'] : null;
-        $this->container['in_app'] = isset($data['in_app']) ? $data['in_app'] : null;
-        $this->container['publish_id'] = isset($data['publish_id']) ? $data['publish_id'] : null;
-        $this->container['c_id'] = isset($data['c_id']) ? $data['c_id'] : null;
         $this->container['track_id'] = isset($data['track_id']) ? $data['track_id'] : null;
-        $this->container['cip'] = isset($data['cip']) ? $data['cip'] : null;
+        $this->container['in_app'] = isset($data['in_app']) ? $data['in_app'] : false;
+        $this->container['live'] = isset($data['live']) ? $data['live'] : false;
+        $this->container['use_as_alert'] = isset($data['use_as_alert']) ? $data['use_as_alert'] : false;
+        $this->container['alert_text'] = isset($data['alert_text']) ? $data['alert_text'] : null;
+        $this->container['ttl'] = isset($data['ttl']) ? $data['ttl'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -228,11 +204,8 @@ class Message implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['id'] === null) {
-            $invalid_properties[] = "'id' can't be null";
-        }
-        if ($this->container['created_at'] === null) {
-            $invalid_properties[] = "'created_at' can't be null";
+        if ($this->container['target'] === null) {
+            $invalid_properties[] = "'target' can't be null";
         }
         if ($this->container['content'] === null) {
             $invalid_properties[] = "'content' can't be null";
@@ -249,10 +222,7 @@ class Message implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['id'] === null) {
-            return false;
-        }
-        if ($this->container['created_at'] === null) {
+        if ($this->container['target'] === null) {
             return false;
         }
         if ($this->container['content'] === null) {
@@ -263,43 +233,43 @@ class Message implements ArrayAccess
 
 
     /**
-     * Gets id
-     * @return string
+     * Gets target
+     * @return object
      */
-    public function getId()
+    public function getTarget()
     {
-        return $this->container['id'];
+        return $this->container['target'];
     }
 
     /**
-     * Sets id
-     * @param string $id
+     * Sets target
+     * @param object $target Segment query you can use many parameters
      * @return $this
      */
-    public function setId($id)
+    public function setTarget($target)
     {
-        $this->container['id'] = $id;
+        $this->container['target'] = $target;
 
         return $this;
     }
 
     /**
-     * Gets created_at
-     * @return double
+     * Gets channel
+     * @return string
      */
-    public function getCreatedAt()
+    public function getChannel()
     {
-        return $this->container['created_at'];
+        return $this->container['channel'];
     }
 
     /**
-     * Sets created_at
-     * @param double $created_at
+     * Sets channel
+     * @param string $channel Channel name to send push to
      * @return $this
      */
-    public function setCreatedAt($created_at)
+    public function setChannel($channel)
     {
-        $this->container['created_at'] = $created_at;
+        $this->container['channel'] = $channel;
 
         return $this;
     }
@@ -315,33 +285,12 @@ class Message implements ArrayAccess
 
     /**
      * Sets content
-     * @param string $content
+     * @param string $content Text of the message
      * @return $this
      */
     public function setContent($content)
     {
         $this->container['content'] = $content;
-
-        return $this;
-    }
-
-    /**
-     * Gets content_type
-     * @return string
-     */
-    public function getContentType()
-    {
-        return $this->container['content_type'];
-    }
-
-    /**
-     * Sets content_type
-     * @param string $content_type
-     * @return $this
-     */
-    public function setContentType($content_type)
-    {
-        $this->container['content_type'] = $content_type;
 
         return $this;
     }
@@ -357,180 +306,12 @@ class Message implements ArrayAccess
 
     /**
      * Sets data
-     * @param object $data
+     * @param object $data Data of the message in JSON
      * @return $this
      */
     public function setData($data)
     {
         $this->container['data'] = $data;
-
-        return $this;
-    }
-
-    /**
-     * Gets delivered
-     * @return \Swagger\Client\Model\XAny[]
-     */
-    public function getDelivered()
-    {
-        return $this->container['delivered'];
-    }
-
-    /**
-     * Sets delivered
-     * @param \Swagger\Client\Model\XAny[] $delivered
-     * @return $this
-     */
-    public function setDelivered($delivered)
-    {
-        $this->container['delivered'] = $delivered;
-
-        return $this;
-    }
-
-    /**
-     * Gets seen
-     * @return \Swagger\Client\Model\XAny[]
-     */
-    public function getSeen()
-    {
-        return $this->container['seen'];
-    }
-
-    /**
-     * Sets seen
-     * @param \Swagger\Client\Model\XAny[] $seen
-     * @return $this
-     */
-    public function setSeen($seen)
-    {
-        $this->container['seen'] = $seen;
-
-        return $this;
-    }
-
-    /**
-     * Gets dismiss
-     * @return \Swagger\Client\Model\XAny[]
-     */
-    public function getDismiss()
-    {
-        return $this->container['dismiss'];
-    }
-
-    /**
-     * Sets dismiss
-     * @param \Swagger\Client\Model\XAny[] $dismiss
-     * @return $this
-     */
-    public function setDismiss($dismiss)
-    {
-        $this->container['dismiss'] = $dismiss;
-
-        return $this;
-    }
-
-    /**
-     * Gets stateful
-     * @return bool
-     */
-    public function getStateful()
-    {
-        return $this->container['stateful'];
-    }
-
-    /**
-     * Sets stateful
-     * @param bool $stateful
-     * @return $this
-     */
-    public function setStateful($stateful)
-    {
-        $this->container['stateful'] = $stateful;
-
-        return $this;
-    }
-
-    /**
-     * Gets live
-     * @return bool
-     */
-    public function getLive()
-    {
-        return $this->container['live'];
-    }
-
-    /**
-     * Sets live
-     * @param bool $live
-     * @return $this
-     */
-    public function setLive($live)
-    {
-        $this->container['live'] = $live;
-
-        return $this;
-    }
-
-    /**
-     * Gets in_app
-     * @return bool
-     */
-    public function getInApp()
-    {
-        return $this->container['in_app'];
-    }
-
-    /**
-     * Sets in_app
-     * @param bool $in_app
-     * @return $this
-     */
-    public function setInApp($in_app)
-    {
-        $this->container['in_app'] = $in_app;
-
-        return $this;
-    }
-
-    /**
-     * Gets publish_id
-     * @return string
-     */
-    public function getPublishId()
-    {
-        return $this->container['publish_id'];
-    }
-
-    /**
-     * Sets publish_id
-     * @param string $publish_id
-     * @return $this
-     */
-    public function setPublishId($publish_id)
-    {
-        $this->container['publish_id'] = $publish_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets c_id
-     * @return string
-     */
-    public function getCId()
-    {
-        return $this->container['c_id'];
-    }
-
-    /**
-     * Sets c_id
-     * @param string $c_id
-     * @return $this
-     */
-    public function setCId($c_id)
-    {
-        $this->container['c_id'] = $c_id;
 
         return $this;
     }
@@ -546,7 +327,7 @@ class Message implements ArrayAccess
 
     /**
      * Sets track_id
-     * @param string $track_id
+     * @param string $track_id TrackId to track public pushes
      * @return $this
      */
     public function setTrackId($track_id)
@@ -557,22 +338,127 @@ class Message implements ArrayAccess
     }
 
     /**
-     * Gets cip
-     * @return string
+     * Gets in_app
+     * @return bool
      */
-    public function getCip()
+    public function getInApp()
     {
-        return $this->container['cip'];
+        return $this->container['in_app'];
     }
 
     /**
-     * Sets cip
-     * @param string $cip
+     * Sets in_app
+     * @param bool $in_app If push should be provided in-app to the user
      * @return $this
      */
-    public function setCip($cip)
+    public function setInApp($in_app)
     {
-        $this->container['cip'] = $cip;
+        $this->container['in_app'] = $in_app;
+
+        return $this;
+    }
+
+    /**
+     * Gets live
+     * @return bool
+     */
+    public function getLive()
+    {
+        return $this->container['live'];
+    }
+
+    /**
+     * Sets live
+     * @param bool $live If the message should only be pushed to users currently online
+     * @return $this
+     */
+    public function setLive($live)
+    {
+        $this->container['live'] = $live;
+
+        return $this;
+    }
+
+    /**
+     * Gets use_as_alert
+     * @return bool
+     */
+    public function getUseAsAlert()
+    {
+        return $this->container['use_as_alert'];
+    }
+
+    /**
+     * Sets use_as_alert
+     * @param bool $use_as_alert Use the message text as the notification text
+     * @return $this
+     */
+    public function setUseAsAlert($use_as_alert)
+    {
+        $this->container['use_as_alert'] = $use_as_alert;
+
+        return $this;
+    }
+
+    /**
+     * Gets alert_text
+     * @return string
+     */
+    public function getAlertText()
+    {
+        return $this->container['alert_text'];
+    }
+
+    /**
+     * Sets alert_text
+     * @param string $alert_text Use separate text for the notification of this message
+     * @return $this
+     */
+    public function setAlertText($alert_text)
+    {
+        $this->container['alert_text'] = $alert_text;
+
+        return $this;
+    }
+
+    /**
+     * Gets ttl
+     * @return double
+     */
+    public function getTtl()
+    {
+        return $this->container['ttl'];
+    }
+
+    /**
+     * Sets ttl
+     * @param double $ttl Expiry of the message, in seconds from the request time
+     * @return $this
+     */
+    public function setTtl($ttl)
+    {
+        $this->container['ttl'] = $ttl;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     * @return double
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param double $id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }

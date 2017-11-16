@@ -1,6 +1,6 @@
 <?php
 /**
- * PushApi
+ * VerificationApi
  * PHP version 5
  *
  * @category Class
@@ -34,14 +34,14 @@ use \Swagger\Client\Configuration;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * PushApi Class Doc Comment
+ * VerificationApi Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class PushApi
+class VerificationApi
 {
     /**
      * API Client
@@ -79,7 +79,7 @@ class PushApi
      *
      * @param \Swagger\Client\ApiClient $apiClient set the API client
      *
-     * @return PushApi
+     * @return VerificationApi
      */
     public function setApiClient(\Swagger\Client\ApiClient $apiClient)
     {
@@ -88,37 +88,37 @@ class PushApi
     }
 
     /**
-     * Operation pushByQuery
+     * Operation verificationRequestCodeGet
      *
-     * Push a text message to a segment of devices
+     * Request a verification code to be sent to a user
      *
-     * @param \Swagger\Client\Model\SegmentPush $payload  (required)
+     * @param string $user_id Should be a 98 starting mobile number in case of SMS (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\PushResponse
+     * @return \Swagger\Client\Model\VerificationStatus
      */
-    public function pushByQuery($payload)
+    public function verificationRequestCodeGet($user_id)
     {
-        list($response) = $this->pushByQueryWithHttpInfo($payload);
+        list($response) = $this->verificationRequestCodeGetWithHttpInfo($user_id);
         return $response;
     }
 
     /**
-     * Operation pushByQueryWithHttpInfo
+     * Operation verificationRequestCodeGetWithHttpInfo
      *
-     * Push a text message to a segment of devices
+     * Request a verification code to be sent to a user
      *
-     * @param \Swagger\Client\Model\SegmentPush $payload  (required)
+     * @param string $user_id Should be a 98 starting mobile number in case of SMS (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\PushResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\VerificationStatus, HTTP status code, HTTP response headers (array of strings)
      */
-    public function pushByQueryWithHttpInfo($payload)
+    public function verificationRequestCodeGetWithHttpInfo($user_id)
     {
-        // verify the required parameter 'payload' is set
-        if ($payload === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $payload when calling pushByQuery');
+        // verify the required parameter 'user_id' is set
+        if ($user_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $user_id when calling verificationRequestCodeGet');
         }
         // parse inputs
-        $resourcePath = "/push/byQuery";
+        $resourcePath = "/verification/requestCode/{userId}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -129,10 +129,13 @@ class PushApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
-        // body params
-        $_tempBody = null;
-        if (isset($payload)) {
-            $_tempBody = $payload;
+        // path params
+        if ($user_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "userId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($user_id),
+                $resourcePath
+            );
         }
 
         // for model (json/xml)
@@ -150,19 +153,19 @@ class PushApi
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath,
-                'POST',
+                'GET',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\PushResponse',
-                '/push/byQuery'
+                '\Swagger\Client\Model\VerificationStatus',
+                '/verification/requestCode/{userId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PushResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\VerificationStatus', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PushResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\VerificationStatus', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -172,37 +175,43 @@ class PushApi
     }
 
     /**
-     * Operation pushToUsers
+     * Operation verificationVerifyGetVerificationVerifyCodeuserIdcode
      *
-     * Push multiple text messages to users
+     * Verify user's verification code
      *
-     * @param \Swagger\Client\Model\Push $messages  (required)
+     * @param string $user_id The same userId passed to requestCode before (required)
+     * @param string $code User&#39;s provided verification code (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\PushResponse[]
+     * @return \Swagger\Client\Model\VerificationStatus
      */
-    public function pushToUsers($messages)
+    public function verificationVerifyGetVerificationVerifyCodeuserIdcode($user_id, $code)
     {
-        list($response) = $this->pushToUsersWithHttpInfo($messages);
+        list($response) = $this->verificationVerifyGetVerificationVerifyCodeuserIdcodeWithHttpInfo($user_id, $code);
         return $response;
     }
 
     /**
-     * Operation pushToUsersWithHttpInfo
+     * Operation verificationVerifyGetVerificationVerifyCodeuserIdcodeWithHttpInfo
      *
-     * Push multiple text messages to users
+     * Verify user's verification code
      *
-     * @param \Swagger\Client\Model\Push $messages  (required)
+     * @param string $user_id The same userId passed to requestCode before (required)
+     * @param string $code User&#39;s provided verification code (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\PushResponse[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\VerificationStatus, HTTP status code, HTTP response headers (array of strings)
      */
-    public function pushToUsersWithHttpInfo($messages)
+    public function verificationVerifyGetVerificationVerifyCodeuserIdcodeWithHttpInfo($user_id, $code)
     {
-        // verify the required parameter 'messages' is set
-        if ($messages === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $messages when calling pushToUsers');
+        // verify the required parameter 'user_id' is set
+        if ($user_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $user_id when calling verificationVerifyGetVerificationVerifyCodeuserIdcode');
+        }
+        // verify the required parameter 'code' is set
+        if ($code === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $code when calling verificationVerifyGetVerificationVerifyCodeuserIdcode');
         }
         // parse inputs
-        $resourcePath = "/push/toUsers";
+        $resourcePath = "/verification/verifyCode/{userId}/{code}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -213,10 +222,21 @@ class PushApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
 
-        // body params
-        $_tempBody = null;
-        if (isset($messages)) {
-            $_tempBody = $messages;
+        // path params
+        if ($user_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "userId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($user_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($code !== null) {
+            $resourcePath = str_replace(
+                "{" . "code" . "}",
+                $this->apiClient->getSerializer()->toPathValue($code),
+                $resourcePath
+            );
         }
 
         // for model (json/xml)
@@ -234,19 +254,19 @@ class PushApi
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath,
-                'POST',
+                'GET',
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\PushResponse[]',
-                '/push/toUsers'
+                '\Swagger\Client\Model\VerificationStatus',
+                '/verification/verifyCode/{userId}/{code}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PushResponse[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\VerificationStatus', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PushResponse[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\VerificationStatus', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

@@ -1,17 +1,17 @@
-# Swagger\Client\PushApi
+# Swagger\Client\VerificationApi
 
 All URIs are relative to *https://sandbox.push.adpdigital.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**pushByQuery**](PushApi.md#pushByQuery) | **POST** /push/byQuery | Push a text message to a segment of devices
-[**pushToUsers**](PushApi.md#pushToUsers) | **POST** /push/toUsers | Push multiple text messages to users
+[**verificationRequestCodeGet**](VerificationApi.md#verificationRequestCodeGet) | **GET** /verification/requestCode/{userId} | Request a verification code to be sent to a user
+[**verificationVerifyGetVerificationVerifyCodeuserIdcode**](VerificationApi.md#verificationVerifyGetVerificationVerifyCodeuserIdcode) | **GET** /verification/verifyCode/{userId}/{code} | Verify user&#39;s verification code
 
 
-# **pushByQuery**
-> \Swagger\Client\Model\PushResponse pushByQuery($payload)
+# **verificationRequestCodeGet**
+> \Swagger\Client\Model\VerificationStatus verificationRequestCodeGet($user_id)
 
-Push a text message to a segment of devices
+Request a verification code to be sent to a user
 
 ### Example
 ```php
@@ -23,14 +23,14 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\PushApi();
-$payload = new \Swagger\Client\Model\SegmentPush(); // \Swagger\Client\Model\SegmentPush | 
+$api_instance = new Swagger\Client\Api\VerificationApi();
+$user_id = "user_id_example"; // string | Should be a 98 starting mobile number in case of SMS
 
 try {
-    $result = $api_instance->pushByQuery($payload);
+    $result = $api_instance->verificationRequestCodeGet($user_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PushApi->pushByQuery: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling VerificationApi->verificationRequestCodeGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -39,11 +39,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payload** | [**\Swagger\Client\Model\SegmentPush**](../Model/SegmentPush.md)|  |
+ **user_id** | **string**| Should be a 98 starting mobile number in case of SMS |
 
 ### Return type
 
-[**\Swagger\Client\Model\PushResponse**](../Model/PushResponse.md)
+[**\Swagger\Client\Model\VerificationStatus**](../Model/VerificationStatus.md)
 
 ### Authorization
 
@@ -56,10 +56,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **pushToUsers**
-> \Swagger\Client\Model\PushResponse[] pushToUsers($messages)
+# **verificationVerifyGetVerificationVerifyCodeuserIdcode**
+> \Swagger\Client\Model\VerificationStatus verificationVerifyGetVerificationVerifyCodeuserIdcode($user_id, $code)
 
-Push multiple text messages to users
+Verify user's verification code
 
 ### Example
 ```php
@@ -71,14 +71,15 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\PushApi();
-$messages = new \Swagger\Client\Model\Push(); // \Swagger\Client\Model\Push | 
+$api_instance = new Swagger\Client\Api\VerificationApi();
+$user_id = "user_id_example"; // string | The same userId passed to requestCode before
+$code = "code_example"; // string | User's provided verification code
 
 try {
-    $result = $api_instance->pushToUsers($messages);
+    $result = $api_instance->verificationVerifyGetVerificationVerifyCodeuserIdcode($user_id, $code);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PushApi->pushToUsers: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling VerificationApi->verificationVerifyGetVerificationVerifyCodeuserIdcode: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -87,11 +88,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **messages** | [**\Swagger\Client\Model\Push**](../Model/Push.md)|  |
+ **user_id** | **string**| The same userId passed to requestCode before |
+ **code** | **string**| User&#39;s provided verification code |
 
 ### Return type
 
-[**\Swagger\Client\Model\PushResponse[]**](../Model/PushResponse.md)
+[**\Swagger\Client\Model\VerificationStatus**](../Model/VerificationStatus.md)
 
 ### Authorization
 

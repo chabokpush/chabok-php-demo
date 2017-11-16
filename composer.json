@@ -1,18 +1,18 @@
 {
-    "name": "/",
-    "description": "",
+    "name": "chabok-php",
+    "description": "Chabok Push Client for PHP",
     "keywords": [
-        "swagger",
+        "chabok",
         "php",
         "sdk",
         "api"
     ],
-    "homepage": "http://swagger.io",
+    "homepage": "http://chabokpush.com",
     "license": "proprietary",
     "authors": [
         {
-            "name": "Swagger and contributors",
-            "homepage": "https://github.com/swagger-api/swagger-codegen"
+            "name": "ChabokPush",
+            "homepage": "https://github.com/chabokpush/chabok-php-demo"
         }
     ],
     "require": {

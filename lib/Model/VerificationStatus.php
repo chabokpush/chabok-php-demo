@@ -1,6 +1,6 @@
 <?php
 /**
- * ObjectID
+ * VerificationStatus
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * ObjectID Class Doc Comment
+ * VerificationStatus Class Doc Comment
  *
  * @category    Class
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ObjectID implements ArrayAccess
+class VerificationStatus implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,15 @@ class ObjectID implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'ObjectID';
+    protected static $swaggerModelName = 'VerificationStatus';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        
+        'result' => 'bool',
+        'id' => 'double'
     ];
 
     /**
@@ -62,7 +63,8 @@ class ObjectID implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        
+        'result' => null,
+        'id' => 'double'
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class ObjectID implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        
+        'result' => 'result',
+        'id' => 'id'
     ];
 
 
@@ -89,7 +92,8 @@ class ObjectID implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        
+        'result' => 'setResult',
+        'id' => 'setId'
     ];
 
 
@@ -98,7 +102,8 @@ class ObjectID implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        
+        'result' => 'getResult',
+        'id' => 'getId'
     ];
 
     public static function attributeMap()
@@ -132,6 +137,8 @@ class ObjectID implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['result'] = isset($data['result']) ? $data['result'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -143,6 +150,9 @@ class ObjectID implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['result'] === null) {
+            $invalid_properties[] = "'result' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -155,9 +165,54 @@ class ObjectID implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['result'] === null) {
+            return false;
+        }
         return true;
     }
 
+
+    /**
+     * Gets result
+     * @return bool
+     */
+    public function getResult()
+    {
+        return $this->container['result'];
+    }
+
+    /**
+     * Sets result
+     * @param bool $result Success or Not
+     * @return $this
+     */
+    public function setResult($result)
+    {
+        $this->container['result'] = $result;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     * @return double
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param double $id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
