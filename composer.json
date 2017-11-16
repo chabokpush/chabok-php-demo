@@ -1,6 +1,7 @@
 {
     "name": "chabok-php",
     "description": "Chabok Push Client for PHP",
+    "version": "1.0.1",
     "keywords": [
         "chabok",
         "php",
