@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Chabok\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Chabok\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Verification Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Chabok\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -57,7 +57,7 @@ class Verification implements ArrayAccess
         'user_id' => 'string',
         'code' => 'string',
         'verified' => 'bool',
-        'id' => '\Swagger\Client\Model\ObjectID'
+        'id' => '\Chabok\Client\Model\ObjectID'
     ];
 
     /**
@@ -249,7 +249,7 @@ class Verification implements ArrayAccess
 
     /**
      * Gets id
-     * @return \Swagger\Client\Model\ObjectID
+     * @return \Chabok\Client\Model\ObjectID
      */
     public function getId()
     {
@@ -258,7 +258,7 @@ class Verification implements ArrayAccess
 
     /**
      * Sets id
-     * @param \Swagger\Client\Model\ObjectID $id
+     * @param \Chabok\Client\Model\ObjectID $id
      * @return $this
      */
     public function setId($id)
@@ -319,10 +319,10 @@ class Verification implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Chabok\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Chabok\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

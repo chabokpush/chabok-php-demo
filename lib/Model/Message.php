@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Chabok\Client
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace Chabok\Client\Model;
 
 use \ArrayAccess;
 
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * Message Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     Chabok\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -59,9 +59,9 @@ class Message implements ArrayAccess
         'content' => 'string',
         'content_type' => 'string',
         'data' => 'object',
-        'delivered' => '\Swagger\Client\Model\XAny[]',
-        'seen' => '\Swagger\Client\Model\XAny[]',
-        'dismiss' => '\Swagger\Client\Model\XAny[]',
+        'delivered' => '\Chabok\Client\Model\XAny[]',
+        'seen' => '\Chabok\Client\Model\XAny[]',
+        'dismiss' => '\Chabok\Client\Model\XAny[]',
         'stateful' => 'bool',
         'live' => 'bool',
         'in_app' => 'bool',
@@ -369,7 +369,7 @@ class Message implements ArrayAccess
 
     /**
      * Gets delivered
-     * @return \Swagger\Client\Model\XAny[]
+     * @return \Chabok\Client\Model\XAny[]
      */
     public function getDelivered()
     {
@@ -378,7 +378,7 @@ class Message implements ArrayAccess
 
     /**
      * Sets delivered
-     * @param \Swagger\Client\Model\XAny[] $delivered
+     * @param \Chabok\Client\Model\XAny[] $delivered
      * @return $this
      */
     public function setDelivered($delivered)
@@ -390,7 +390,7 @@ class Message implements ArrayAccess
 
     /**
      * Gets seen
-     * @return \Swagger\Client\Model\XAny[]
+     * @return \Chabok\Client\Model\XAny[]
      */
     public function getSeen()
     {
@@ -399,7 +399,7 @@ class Message implements ArrayAccess
 
     /**
      * Sets seen
-     * @param \Swagger\Client\Model\XAny[] $seen
+     * @param \Chabok\Client\Model\XAny[] $seen
      * @return $this
      */
     public function setSeen($seen)
@@ -411,7 +411,7 @@ class Message implements ArrayAccess
 
     /**
      * Gets dismiss
-     * @return \Swagger\Client\Model\XAny[]
+     * @return \Chabok\Client\Model\XAny[]
      */
     public function getDismiss()
     {
@@ -420,7 +420,7 @@ class Message implements ArrayAccess
 
     /**
      * Sets dismiss
-     * @param \Swagger\Client\Model\XAny[] $dismiss
+     * @param \Chabok\Client\Model\XAny[] $dismiss
      * @return $this
      */
     public function setDismiss($dismiss)
@@ -628,10 +628,10 @@ class Message implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\Chabok\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\Chabok\Client\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

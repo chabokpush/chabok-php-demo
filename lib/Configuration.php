@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Chabok\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,14 +26,14 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client;
+namespace Chabok\Client;
 
 /**
  * Configuration Class Doc Comment
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Chabok\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -54,6 +54,20 @@ class Configuration
      * @var string[]
      */
     protected $apiKeyPrefixes = [];
+
+    /**
+     * App Id
+     *
+     * @var string
+     */
+    protected $appId = '';
+
+    /**
+     * Dev Mode
+     *
+     * @var string
+     */
+    protected $devMode = false;
 
     /**
      * Access token for OAuth
@@ -203,6 +217,35 @@ class Configuration
     public function setApiKey($apiKeyIdentifier, $key)
     {
         $this->apiKeys[$apiKeyIdentifier] = $key;
+        return $this;
+    }
+
+    /**
+     * Sets APP ID
+     *
+     * @param string $appId              App Id String
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->appId = $appId;
+        return $this;
+    }
+
+    /**
+     * Sets Development Mode
+     *
+     * @param bool $devMode  Enable/Disable development mode
+     *
+     * @return $this
+     */
+    public function setDevMode($devMode)
+    {
+        $this->devMode = $devMode;
+        if($this->devMode == false){
+            $this->host = 'https://'.$this->appId.'.push.adpdigital.com/api';
+        }
         return $this;
     }
 
@@ -724,7 +767,7 @@ class Configuration
      */
     public static function toDebugReport()
     {
-        $report  = 'PHP SDK (Swagger\Client) Debug Report:' . PHP_EOL;
+        $report  = 'PHP SDK (Chabok\Client) Debug Report:' . PHP_EOL;
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 1.21.4' . PHP_EOL;

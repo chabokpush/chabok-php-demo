@@ -1,4 +1,4 @@
-# Swagger\Client\PushApi
+# Chabok\Client\PushApi
 
 All URIs are relative to *https://sandbox.push.adpdigital.com/api*
 
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **pushByQuery**
-> \Swagger\Client\Model\PushResponse pushByQuery($payload)
+> \Chabok\Client\Model\PushResponse pushByQuery($payload)
 
 Push a text message to a segment of devices
 
@@ -18,13 +18,17 @@ Push a text message to a segment of devices
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: ApiSecurity
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Configure API key authorization: ApiSecurity,  Get your 'YOUR_API_KEY' from http://sandbox.push.adpdigital.com/front/account/edit 
+Chabok\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Get your 'App_ID' from http://sandbox.push.adpdigital.com/front/account/edit 
+Chabok\Client\Configuration::getDefaultConfiguration()->setAppId('App_ID');
+// Make Dev mode enable If you want to test your App on Development environment or don't have Chabok premium account
+Chabok\Client\Configuration::getDefaultConfiguration()->setDevMode(true);
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+// Chabok\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\PushApi();
-$payload = new \Swagger\Client\Model\SegmentPush(); // \Swagger\Client\Model\SegmentPush | 
+$api_instance = new Chabok\Client\Api\PushApi();
+$payload = new \Chabok\Client\Model\SegmentPush(); // \Chabok\Client\Model\SegmentPush | 
 
 try {
     $result = $api_instance->pushByQuery($payload);
@@ -39,11 +43,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payload** | [**\Swagger\Client\Model\SegmentPush**](../Model/SegmentPush.md)|  |
+ **payload** | [**\Chabok\Client\Model\SegmentPush**](../Model/SegmentPush.md)|  |
 
 ### Return type
 
-[**\Swagger\Client\Model\PushResponse**](../Model/PushResponse.md)
+[**\Chabok\Client\Model\PushResponse**](../Model/PushResponse.md)
 
 ### Authorization
 
@@ -57,7 +61,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **pushToUsers**
-> \Swagger\Client\Model\PushResponse[] pushToUsers($messages)
+> \Chabok\Client\Model\PushResponse[] pushToUsers($messages)
 
 Push multiple text messages to users
 
@@ -66,13 +70,17 @@ Push multiple text messages to users
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: ApiSecurity
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Configure API key authorization: ApiSecurity,  Get your 'YOUR_API_KEY' from http://sandbox.push.adpdigital.com/front/account/edit 
+Chabok\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Get your 'App_ID' from http://sandbox.push.adpdigital.com/front/account/edit 
+Chabok\Client\Configuration::getDefaultConfiguration()->setAppId('App_ID');
+// Make Dev mode enable If you want to test your App on Development environment or don't have Chabok premium account
+Chabok\Client\Configuration::getDefaultConfiguration()->setDevMode(true);
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+// Chabok\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\PushApi();
-$messages = new \Swagger\Client\Model\Push(); // \Swagger\Client\Model\Push | 
+$api_instance = new Chabok\Client\Api\PushApi();
+$messages = new \Chabok\Client\Model\Push(); // \Chabok\Client\Model\Push | 
 
 try {
     $result = $api_instance->pushToUsers($messages);
@@ -87,11 +95,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **messages** | [**\Swagger\Client\Model\Push**](../Model/Push.md)|  |
+ **messages** | [**\Chabok\Client\Model\Push**](../Model/Push.md)|  |
 
 ### Return type
 
-[**\Swagger\Client\Model\PushResponse[]**](../Model/PushResponse.md)
+[**\Chabok\Client\Model\PushResponse[]**](../Model/PushResponse.md)
 
 ### Authorization
 

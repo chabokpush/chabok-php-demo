@@ -1,4 +1,4 @@
-# Swagger\Client\InstallationApi
+# Chabok\Client\InstallationApi
 
 All URIs are relative to *https://sandbox.push.adpdigital.com/api*
 
@@ -23,11 +23,13 @@ Add tag to all devices of a user
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: ApiSecurity
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+Chabok\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+Chabok\Client\Configuration::getDefaultConfiguration()->setAppId('App_ID');
+Chabok\Client\Configuration::getDefaultConfiguration()->setDevMode(true);
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+// Chabok\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\InstallationApi();
+$api_instance = new Chabok\Client\Api\InstallationApi();
 $user_id = "user_id_example"; // string | 
 $tag_name = "tag_name_example"; // string | 
 
@@ -63,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **installationFetchById**
-> \Swagger\Client\Model\Installation installationFetchById($installation_id)
+> \Chabok\Client\Model\Installation installationFetchById($installation_id)
 
 Find device installation data by installationId
 
@@ -73,11 +75,13 @@ Find device installation data by installationId
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: ApiSecurity
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+Chabok\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+Chabok\Client\Configuration::getDefaultConfiguration()->setAppId('App_ID');
+Chabok\Client\Configuration::getDefaultConfiguration()->setDevMode(true);
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+// Chabok\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\InstallationApi();
+$api_instance = new Chabok\Client\Api\InstallationApi();
 $installation_id = "installation_id_example"; // string | installationId
 
 try {
@@ -97,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Installation**](../Model/Installation.md)
+[**\Chabok\Client\Model\Installation**](../Model/Installation.md)
 
 ### Authorization
 
@@ -111,7 +115,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **installationFetchByUserId**
-> \Swagger\Client\Model\Installation[] installationFetchByUserId($user_id)
+> \Chabok\Client\Model\Installation[] installationFetchByUserId($user_id)
 
 Find devices of a specific user
 
@@ -121,11 +125,13 @@ Find devices of a specific user
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: ApiSecurity
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+Chabok\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+Chabok\Client\Configuration::getDefaultConfiguration()->setAppId('App_ID');
+Chabok\Client\Configuration::getDefaultConfiguration()->setDevMode(true);
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+// Chabok\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\InstallationApi();
+$api_instance = new Chabok\Client\Api\InstallationApi();
 $user_id = "user_id_example"; // string | The userId
 
 try {
@@ -145,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Installation[]**](../Model/Installation.md)
+[**\Chabok\Client\Model\Installation[]**](../Model/Installation.md)
 
 ### Authorization
 
@@ -168,12 +174,16 @@ List of unique channel names
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: ApiSecurity
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Configure API key authorization: ApiSecurity,  Get your 'YOUR_API_KEY' from http://sandbox.push.adpdigital.com/front/account/edit 
+Chabok\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Get your 'App_ID' from http://sandbox.push.adpdigital.com/front/account/edit 
+Chabok\Client\Configuration::getDefaultConfiguration()->setAppId('App_ID');
+// Make Dev mode enable If you want to test your App on Development environment or don't have Chabok premium account
+Chabok\Client\Configuration::getDefaultConfiguration()->setDevMode(true);
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+// Chabok\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\InstallationApi();
+$api_instance = new Chabok\Client\Api\InstallationApi();
 
 try {
     $result = $api_instance->installationGroupBySubscription();
@@ -212,12 +222,16 @@ Remove a tag from devices of a UserId
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: ApiSecurity
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Configure API key authorization: ApiSecurity,  Get your 'YOUR_API_KEY' from http://sandbox.push.adpdigital.com/front/account/edit 
+Chabok\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Get your 'App_ID' from http://sandbox.push.adpdigital.com/front/account/edit 
+Chabok\Client\Configuration::getDefaultConfiguration()->setAppId('App_ID');
+// Make Dev mode enable If you want to test your App on Development environment or don't have Chabok premium account
+Chabok\Client\Configuration::getDefaultConfiguration()->setDevMode(true);
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+// Chabok\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\InstallationApi();
+$api_instance = new Chabok\Client\Api\InstallationApi();
 $user_id = "user_id_example"; // string | 
 $tag_name = "tag_name_example"; // string | 
 
@@ -262,12 +276,16 @@ List of unique tag names
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: ApiSecurity
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Configure API key authorization: ApiSecurity,  Get your 'YOUR_API_KEY' from http://sandbox.push.adpdigital.com/front/account/edit 
+Chabok\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Get your 'App_ID' from http://sandbox.push.adpdigital.com/front/account/edit 
+Chabok\Client\Configuration::getDefaultConfiguration()->setAppId('App_ID');
+// Make Dev mode enable If you want to test your App on Development environment or don't have Chabok premium account
+Chabok\Client\Configuration::getDefaultConfiguration()->setDevMode(true);
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+// Chabok\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\InstallationApi();
+$api_instance = new Chabok\Client\Api\InstallationApi();
 
 try {
     $result = $api_instance->installationTags();
