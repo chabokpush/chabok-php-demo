@@ -1,7 +1,7 @@
 # Chabok API for PHP
 Integrate your app with Chabok messaging & push api seamlessly
 
-## Upgrade Notes to v1.2.0 (MUST READ)
+## Upgrade Notes to v1.1.0 (MUST READ)
 * Change all `Swagger` prefix to `Chabok`
 * You should set 'App_ID' on Chabok Configuration to connect in the right way
 
