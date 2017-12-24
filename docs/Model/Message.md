@@ -8,9 +8,9 @@ Name | Type | Description | Notes
 **content** | **string** |  | 
 **content_type** | **string** |  | [optional] 
 **data** | **object** |  | [optional] 
-**delivered** | [**\Swagger\Client\Model\XAny[]**](XAny.md) |  | [optional] 
-**seen** | [**\Swagger\Client\Model\XAny[]**](XAny.md) |  | [optional] 
-**dismiss** | [**\Swagger\Client\Model\XAny[]**](XAny.md) |  | [optional] 
+**delivered** | [**\Chabok\Client\Model\XAny[]**](XAny.md) |  | [optional] 
+**seen** | [**\Chabok\Client\Model\XAny[]**](XAny.md) |  | [optional] 
+**dismiss** | [**\Chabok\Client\Model\XAny[]**](XAny.md) |  | [optional] 
 **stateful** | **bool** |  | [optional] 
 **live** | **bool** |  | [optional] 
 **in_app** | **bool** |  | [optional] 

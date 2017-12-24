@@ -10,12 +10,10 @@
     ],
     "homepage": "http://chabokpush.com",
     "license": "proprietary",
-    "authors": [
-        {
-            "name": "ChabokPush",
-            "homepage": "https://github.com/chabokpush/chabok-php-demo"
-        }
-    ],
+    "authors": [{
+        "name": "ChabokPush",
+        "homepage": "https://github.com/chabokpush/chabok-php-demo"
+    }],
     "require": {
         "php": ">=5.4",
         "ext-curl": "*",
@@ -29,9 +27,9 @@
         "friendsofphp/php-cs-fixer": "~1.12"
     },
     "autoload": {
-        "psr-4": { "Swagger\\Client\\" : "lib/" }
+        "psr-4": { "Chabok\\Client\\": "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "Swagger\\Client\\" : "test/" }
+        "psr-4": { "Chabok\\Client\\": "test/" }
     }
 }

@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Chabok\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Chabok\Client\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \Chabok\Client\ApiClient;
+use \Chabok\Client\ApiException;
+use \Chabok\Client\Configuration;
+use \Chabok\Client\ObjectSerializer;
 
 /**
  * InstallationApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Chabok\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class InstallationApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \Chabok\Client\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \Chabok\Client\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\Chabok\Client\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class InstallationApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \Chabok\Client\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class InstallationApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \Chabok\Client\ApiClient $apiClient set the API client
      *
      * @return InstallationApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\Chabok\Client\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -94,7 +94,7 @@ class InstallationApi
      *
      * @param string $user_id  (required)
      * @param string $tag_name  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Chabok\Client\ApiException on non-2xx response
      * @return object
      */
     public function installationAddTag($user_id, $tag_name)
@@ -110,7 +110,7 @@ class InstallationApi
      *
      * @param string $user_id  (required)
      * @param string $tag_name  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Chabok\Client\ApiException on non-2xx response
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
     public function installationAddTagWithHttpInfo($user_id, $tag_name)
@@ -194,8 +194,8 @@ class InstallationApi
      * Find device installation data by installationId
      *
      * @param string $installation_id installationId (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Installation
+     * @throws \Chabok\Client\ApiException on non-2xx response
+     * @return \Chabok\Client\Model\Installation
      */
     public function installationFetchById($installation_id)
     {
@@ -209,8 +209,8 @@ class InstallationApi
      * Find device installation data by installationId
      *
      * @param string $installation_id installationId (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Installation, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Chabok\Client\ApiException on non-2xx response
+     * @return array of \Chabok\Client\Model\Installation, HTTP status code, HTTP response headers (array of strings)
      */
     public function installationFetchByIdWithHttpInfo($installation_id)
     {
@@ -258,15 +258,15 @@ class InstallationApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Installation',
+                '\Chabok\Client\Model\Installation',
                 '/installations/fetchById/{installationId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Installation', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Chabok\Client\Model\Installation', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Installation', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Chabok\Client\Model\Installation', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -281,8 +281,8 @@ class InstallationApi
      * Find devices of a specific user
      *
      * @param string $user_id The userId (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Installation[]
+     * @throws \Chabok\Client\ApiException on non-2xx response
+     * @return \Chabok\Client\Model\Installation[]
      */
     public function installationFetchByUserId($user_id)
     {
@@ -296,8 +296,8 @@ class InstallationApi
      * Find devices of a specific user
      *
      * @param string $user_id The userId (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Installation[], HTTP status code, HTTP response headers (array of strings)
+     * @throws \Chabok\Client\ApiException on non-2xx response
+     * @return array of \Chabok\Client\Model\Installation[], HTTP status code, HTTP response headers (array of strings)
      */
     public function installationFetchByUserIdWithHttpInfo($user_id)
     {
@@ -345,15 +345,15 @@ class InstallationApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Installation[]',
+                '\Chabok\Client\Model\Installation[]',
                 '/installations/fetchByUserId/{userId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Installation[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Chabok\Client\Model\Installation[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Installation[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Chabok\Client\Model\Installation[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -367,7 +367,7 @@ class InstallationApi
      *
      * List of unique channel names
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Chabok\Client\ApiException on non-2xx response
      * @return object[]
      */
     public function installationGroupBySubscription()
@@ -381,7 +381,7 @@ class InstallationApi
      *
      * List of unique channel names
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Chabok\Client\ApiException on non-2xx response
      * @return array of object[], HTTP status code, HTTP response headers (array of strings)
      */
     public function installationGroupBySubscriptionWithHttpInfo()
@@ -442,7 +442,7 @@ class InstallationApi
      *
      * @param string $user_id  (required)
      * @param string $tag_name  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Chabok\Client\ApiException on non-2xx response
      * @return object
      */
     public function installationRemoveTag($user_id, $tag_name)
@@ -458,7 +458,7 @@ class InstallationApi
      *
      * @param string $user_id  (required)
      * @param string $tag_name  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Chabok\Client\ApiException on non-2xx response
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
     public function installationRemoveTagWithHttpInfo($user_id, $tag_name)
@@ -541,7 +541,7 @@ class InstallationApi
      *
      * List of unique tag names
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Chabok\Client\ApiException on non-2xx response
      * @return string[]
      */
     public function installationTags()
@@ -555,7 +555,7 @@ class InstallationApi
      *
      * List of unique tag names
      *
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \Chabok\Client\ApiException on non-2xx response
      * @return array of string[], HTTP status code, HTTP response headers (array of strings)
      */
     public function installationTagsWithHttpInfo()

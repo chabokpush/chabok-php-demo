@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Chabok\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Chabok\Client\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \Chabok\Client\ApiClient;
+use \Chabok\Client\ApiException;
+use \Chabok\Client\Configuration;
+use \Chabok\Client\ObjectSerializer;
 
 /**
  * PushApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Chabok\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class PushApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \Chabok\Client\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \Chabok\Client\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\Chabok\Client\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class PushApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \Chabok\Client\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class PushApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \Chabok\Client\ApiClient $apiClient set the API client
      *
      * @return PushApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\Chabok\Client\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -92,9 +92,9 @@ class PushApi
      *
      * Push a text message to a segment of devices
      *
-     * @param \Swagger\Client\Model\SegmentPush $payload  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\PushResponse
+     * @param \Chabok\Client\Model\SegmentPush $payload  (required)
+     * @throws \Chabok\Client\ApiException on non-2xx response
+     * @return \Chabok\Client\Model\PushResponse
      */
     public function pushByQuery($payload)
     {
@@ -107,9 +107,9 @@ class PushApi
      *
      * Push a text message to a segment of devices
      *
-     * @param \Swagger\Client\Model\SegmentPush $payload  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\PushResponse, HTTP status code, HTTP response headers (array of strings)
+     * @param \Chabok\Client\Model\SegmentPush $payload  (required)
+     * @throws \Chabok\Client\ApiException on non-2xx response
+     * @return array of \Chabok\Client\Model\PushResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function pushByQueryWithHttpInfo($payload)
     {
@@ -154,15 +154,15 @@ class PushApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\PushResponse',
+                '\Chabok\Client\Model\PushResponse',
                 '/push/byQuery'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PushResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Chabok\Client\Model\PushResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PushResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Chabok\Client\Model\PushResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -176,9 +176,9 @@ class PushApi
      *
      * Push multiple text messages to users
      *
-     * @param \Swagger\Client\Model\Push $messages  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\PushResponse[]
+     * @param \Chabok\Client\Model\Push $messages  (required)
+     * @throws \Chabok\Client\ApiException on non-2xx response
+     * @return \Chabok\Client\Model\PushResponse[]
      */
     public function pushToUsers($messages)
     {
@@ -191,9 +191,9 @@ class PushApi
      *
      * Push multiple text messages to users
      *
-     * @param \Swagger\Client\Model\Push $messages  (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\PushResponse[], HTTP status code, HTTP response headers (array of strings)
+     * @param \Chabok\Client\Model\Push $messages  (required)
+     * @throws \Chabok\Client\ApiException on non-2xx response
+     * @return array of \Chabok\Client\Model\PushResponse[], HTTP status code, HTTP response headers (array of strings)
      */
     public function pushToUsersWithHttpInfo($messages)
     {
@@ -238,15 +238,15 @@ class PushApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\PushResponse[]',
+                '\Chabok\Client\Model\PushResponse[]',
                 '/push/toUsers'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PushResponse[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Chabok\Client\Model\PushResponse[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PushResponse[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Chabok\Client\Model\PushResponse[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Chabok\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace Chabok\Client\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \Chabok\Client\ApiClient;
+use \Chabok\Client\ApiException;
+use \Chabok\Client\Configuration;
+use \Chabok\Client\ObjectSerializer;
 
 /**
  * VerificationApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  Chabok\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class VerificationApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \Chabok\Client\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \Chabok\Client\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\Chabok\Client\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class VerificationApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \Chabok\Client\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class VerificationApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \Chabok\Client\ApiClient $apiClient set the API client
      *
      * @return VerificationApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\Chabok\Client\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -93,8 +93,8 @@ class VerificationApi
      * Request a verification code to be sent to a user
      *
      * @param string $user_id Should be a 98 starting mobile number in case of SMS (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\VerificationStatus
+     * @throws \Chabok\Client\ApiException on non-2xx response
+     * @return \Chabok\Client\Model\VerificationStatus
      */
     public function verificationRequestCodeGet($user_id)
     {
@@ -108,8 +108,8 @@ class VerificationApi
      * Request a verification code to be sent to a user
      *
      * @param string $user_id Should be a 98 starting mobile number in case of SMS (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\VerificationStatus, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Chabok\Client\ApiException on non-2xx response
+     * @return array of \Chabok\Client\Model\VerificationStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function verificationRequestCodeGetWithHttpInfo($user_id)
     {
@@ -157,15 +157,15 @@ class VerificationApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\VerificationStatus',
+                '\Chabok\Client\Model\VerificationStatus',
                 '/verification/requestCode/{userId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\VerificationStatus', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Chabok\Client\Model\VerificationStatus', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\VerificationStatus', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Chabok\Client\Model\VerificationStatus', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -181,8 +181,8 @@ class VerificationApi
      *
      * @param string $user_id The same userId passed to requestCode before (required)
      * @param string $code User&#39;s provided verification code (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\VerificationStatus
+     * @throws \Chabok\Client\ApiException on non-2xx response
+     * @return \Chabok\Client\Model\VerificationStatus
      */
     public function verificationVerifyGetVerificationVerifyCodeuserIdcode($user_id, $code)
     {
@@ -197,8 +197,8 @@ class VerificationApi
      *
      * @param string $user_id The same userId passed to requestCode before (required)
      * @param string $code User&#39;s provided verification code (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\VerificationStatus, HTTP status code, HTTP response headers (array of strings)
+     * @throws \Chabok\Client\ApiException on non-2xx response
+     * @return array of \Chabok\Client\Model\VerificationStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function verificationVerifyGetVerificationVerifyCodeuserIdcodeWithHttpInfo($user_id, $code)
     {
@@ -258,15 +258,15 @@ class VerificationApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\VerificationStatus',
+                '\Chabok\Client\Model\VerificationStatus',
                 '/verification/verifyCode/{userId}/{code}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\VerificationStatus', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Chabok\Client\Model\VerificationStatus', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\VerificationStatus', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Chabok\Client\Model\VerificationStatus', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
