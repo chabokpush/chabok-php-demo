@@ -56,6 +56,20 @@ class Configuration
     protected $apiKeyPrefixes = [];
 
     /**
+     * App Id
+     *
+     * @var string
+     */
+    protected $appId = '';
+
+    /**
+     * Dev Mode
+     *
+     * @var string
+     */
+    protected $devMode = false;
+
+    /**
      * Access token for OAuth
      *
      * @var string
@@ -203,6 +217,35 @@ class Configuration
     public function setApiKey($apiKeyIdentifier, $key)
     {
         $this->apiKeys[$apiKeyIdentifier] = $key;
+        return $this;
+    }
+
+    /**
+     * Sets APP ID
+     *
+     * @param string $appId              App Id String
+     *
+     * @return $this
+     */
+    public function setAppId($appId)
+    {
+        $this->appId = $appId;
+        return $this;
+    }
+
+    /**
+     * Sets Development Mode
+     *
+     * @param bool $devMode  Enable/Disable development mode
+     *
+     * @return $this
+     */
+    public function setDevMode($devMode)
+    {
+        $this->devMode = $devMode;
+        if($this->devMode == false){
+            $this->host = 'https://'.$this->appId.'.push.adpdigital.com/api';
+        }
         return $this;
     }
 
