@@ -18,8 +18,12 @@ Push a text message to a segment of devices
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: ApiSecurity
+// Configure API key authorization: ApiSecurity,  Get your 'YOUR_API_KEY' from http://sandbox.push.adpdigital.com/front/account/edit 
 Chabok\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Get your 'App_ID' from http://sandbox.push.adpdigital.com/front/account/edit 
+Chabok\Client\Configuration::getDefaultConfiguration()->setAppId('App_ID');
+// Make Dev mode enable If you want to test your App on Development environment or don't have Chabok premium account
+Chabok\Client\Configuration::getDefaultConfiguration()->setDevMode(true);
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // Chabok\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
@@ -66,9 +70,11 @@ Push multiple text messages to users
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: ApiSecurity
+// Configure API key authorization: ApiSecurity,  Get your 'YOUR_API_KEY' from http://sandbox.push.adpdigital.com/front/account/edit 
 Chabok\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Get your 'App_ID' from http://sandbox.push.adpdigital.com/front/account/edit 
 Chabok\Client\Configuration::getDefaultConfiguration()->setAppId('App_ID');
+// Make Dev mode enable If you want to test your App on Development environment or don't have Chabok premium account
 Chabok\Client\Configuration::getDefaultConfiguration()->setDevMode(true);
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // Chabok\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
