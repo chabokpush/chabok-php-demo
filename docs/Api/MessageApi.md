@@ -1,4 +1,4 @@
-# Swagger\Client\MessageApi
+# Chabok\Client\MessageApi
 
 All URIs are relative to *https://sandbox.push.adpdigital.com/api*
 
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **messageFetchById**
-> \Swagger\Client\Model\Message messageFetchById($message_id)
+> \Chabok\Client\Model\Message messageFetchById($message_id)
 
 Fetch a pushed message by id
 
@@ -18,11 +18,13 @@ Fetch a pushed message by id
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: ApiSecurity
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+Chabok\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+Swagger\Client\Configuration::getDefaultConfiguration()->setAppId('App_ID');
+Swagger\Client\Configuration::getDefaultConfiguration()->setDevMode(true);
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+// Chabok\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
-$api_instance = new Swagger\Client\Api\MessageApi();
+$api_instance = new Chabok\Client\Api\MessageApi();
 $message_id = "message_id_example"; // string | 
 
 try {
@@ -42,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Message**](../Model/Message.md)
+[**\Chabok\Client\Model\Message**](../Model/Message.md)
 
 ### Authorization
 

@@ -24,6 +24,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: ApiSecurity
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+Swagger\Client\Configuration::getDefaultConfiguration()->setAppId('App_ID');
+Swagger\Client\Configuration::getDefaultConfiguration()->setDevMode(true);
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
@@ -74,6 +76,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: ApiSecurity
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+Swagger\Client\Configuration::getDefaultConfiguration()->setAppId('App_ID');
+Swagger\Client\Configuration::getDefaultConfiguration()->setDevMode(true);
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
@@ -122,6 +126,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: ApiSecurity
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+Swagger\Client\Configuration::getDefaultConfiguration()->setAppId('App_ID');
+Swagger\Client\Configuration::getDefaultConfiguration()->setDevMode(true);
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
@@ -170,6 +176,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: ApiSecurity
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+Swagger\Client\Configuration::getDefaultConfiguration()->setAppId('App_ID');
+Swagger\Client\Configuration::getDefaultConfiguration()->setDevMode(true);
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
@@ -214,6 +222,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: ApiSecurity
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+Swagger\Client\Configuration::getDefaultConfiguration()->setAppId('App_ID');
+Swagger\Client\Configuration::getDefaultConfiguration()->setDevMode(true);
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
@@ -264,6 +274,8 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: ApiSecurity
 Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+Swagger\Client\Configuration::getDefaultConfiguration()->setAppId('App_ID');
+Swagger\Client\Configuration::getDefaultConfiguration()->setDevMode(true);
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
