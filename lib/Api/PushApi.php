@@ -172,6 +172,90 @@ class PushApi
     }
 
     /**
+     * Operation pushNotifyByQuery
+     *
+     * Send a cloud message to a segment of devices
+     *
+     * @param \Chabok\Client\Model\SegmentPush $payload  (required)
+     * @throws \Chabok\Client\ApiException on non-2xx response
+     * @return \Chabok\Client\Model\PushResponse
+     */
+    public function pushNotifyByQuery($payload)
+    {
+        list($response) = $this->pushNotifyByQueryWithHttpInfo($payload);
+        return $response;
+    }
+
+    /**
+     * Operation pushNotifyByQueryWithHttpInfo
+     *
+     * Send a cloud message to a segment of devices
+     *
+     * @param \Chabok\Client\Model\SegmentPush $payload  (required)
+     * @throws \Chabok\Client\ApiException on non-2xx response
+     * @return array of \Chabok\Client\Model\PushResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function pushNotifyByQueryWithHttpInfo($payload)
+    {
+        // verify the required parameter 'payload' is set
+        if ($payload === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $payload when calling pushByQuery');
+        }
+        // parse inputs
+        $resourcePath = "/push/notifyByQuery";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        // body params
+        $_tempBody = null;
+        if (isset($payload)) {
+            $_tempBody = $payload;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('access_token');
+        if (strlen($apiKey) !== 0) {
+            $queryParams['access_token'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Chabok\Client\Model\PushResponse',
+                '/push/notifyByQuery'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Chabok\Client\Model\PushResponse', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Chabok\Client\Model\PushResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation pushToUsers
      *
      * Push multiple text messages to users
@@ -240,6 +324,90 @@ class PushApi
                 $headerParams,
                 '\Chabok\Client\Model\PushResponse[]',
                 '/push/toUsers'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Chabok\Client\Model\PushResponse[]', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Chabok\Client\Model\PushResponse[]', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation pushNotifyToUsers
+     *
+     * Send cloud message to users
+     *
+     * @param \Chabok\Client\Model\Push $messages  (required)
+     * @throws \Chabok\Client\ApiException on non-2xx response
+     * @return \Chabok\Client\Model\PushResponse[]
+     */
+    public function pushNotifyToUsers($messages)
+    {
+        list($response) = $this->pushNotifyToUsersWithHttpInfo($messages);
+        return $response;
+    }
+
+    /**
+     * Operation pushNotifyToUsersWithHttpInfo
+     *
+     * Send cloud message to users
+     *
+     * @param \Chabok\Client\Model\Push $messages  (required)
+     * @throws \Chabok\Client\ApiException on non-2xx response
+     * @return array of \Chabok\Client\Model\PushResponse[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function pushNotifyToUsersWithHttpInfo($messages)
+    {
+        // verify the required parameter 'messages' is set
+        if ($messages === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $messages when calling pushToUsers');
+        }
+        // parse inputs
+        $resourcePath = "/push/notifyToUsers";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        // body params
+        $_tempBody = null;
+        if (isset($messages)) {
+            $_tempBody = $messages;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('access_token');
+        if (strlen($apiKey) !== 0) {
+            $queryParams['access_token'] = $apiKey;
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Chabok\Client\Model\PushResponse[]',
+                '/push/notifyToUsers'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Chabok\Client\Model\PushResponse[]', $httpHeader), $statusCode, $httpHeader];
